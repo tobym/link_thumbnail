@@ -1,0 +1,3 @@
+module LinkThumbnail
+  # Your code goes here...
+end
