@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<oembed>
+  <version>1.0</version>
+  <type>link</type>
+  <thumbnail_url>http://example.com/thumbnail.jpg</thumbnail_url>
+  <thumbnail_width>150</thumbnail_width>
+  <thumbnail_height>150</thumbnail_height>
+</oembed>
