@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Toby Matejovsky"]
   s.email       = ["toby.matejovsky@gmail.com"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/tobym/link_thumbnail"
   s.summary     = %q{Retrieve thumbnail images for a given URL.}
   s.description = %q{Given a URL, retrieves thumbnail images (similar to when you share a link on Facebook or Digg).}
 

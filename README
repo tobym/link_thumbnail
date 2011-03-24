@@ -11,8 +11,21 @@ The approach to discovering an image is multi-tiered, in this order:
   - thumbnail_url
   - "photo" type url
 * microformats:
-  - hMedia
-  - hProduct
+  - basically <img> with "photo" class
+* semantic
+  - leverages Readability
+
+
+Usage / Quickstart
+==================
+In console:
+
+    gem install link_thumbnail
+
+In irb:
+
+    require 'link_thumbnail'
+    LinkThumbnail.thumbnail_url("http://example.com/a-post/") # => "http://example.com/images/relevant-image.jpg"
 
 
 License (BSD)
