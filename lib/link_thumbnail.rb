@@ -1,11 +1,14 @@
 require 'json'
 require 'nokogiri'
 require 'open-uri'
+require 'readability'
+require 'readability/document/get_best_candidate'
 
 module LinkThumbnail
   class << self
     def thumbnail_url(url)
-      doc = Nokogiri.parse(open(url))
+      source = open(url).read
+      doc = Nokogiri.parse(source)
 
       if element = doc.xpath('//meta[@property="og:image" and @content]').first
         # OpenGraph
@@ -37,6 +40,14 @@ module LinkThumbnail
       elsif element = doc.xpath('//img[@class="photo" and @src]').first
           # Microformat
           return element.attributes['src'].value
+
+      elsif readability_doc = Readability::Document.new(source)
+        # Semantic
+        if element = readability_doc.get_best_candidate
+          if img = element.xpath('//img[@src]').first
+            return img.attributes['src'].value
+          end
+        end
       end
     end
 

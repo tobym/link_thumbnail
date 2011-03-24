@@ -17,7 +17,9 @@ class LinkThumbnailTest < MiniTest::Unit::TestCase
     :oembed_xml_thumbnail_response => File.join(File.dirname(__FILE__), "fixtures", "oembed_thumbnail_response.xml"),
     :oembed_xml_photo_response => File.join(File.dirname(__FILE__), "fixtures", "oembed_photo_response.xml"),
 
-    :microformat => File.join(File.dirname(__FILE__), "fixtures", "microformat.html")
+    :microformat => File.join(File.dirname(__FILE__), "fixtures", "microformat.html"),
+
+    :semantic => File.join(File.dirname(__FILE__), "fixtures", "semantic.html"),
   }
 
   def test_opengraph
@@ -61,6 +63,11 @@ class LinkThumbnailTest < MiniTest::Unit::TestCase
 
   def test_microformat
     assert_equal "http://example.com/thumb.jpg", LinkThumbnail.thumbnail_url(FIXTURES[:microformat])
+  end
+
+  def test_semantic
+    assert_equal "http://venturehacks.com/wordpress/wp-content/uploads/2009/10/Peace-Logo.jpg",
+      LinkThumbnail.thumbnail_url(FIXTURES[:semantic])
   end
 
 end
