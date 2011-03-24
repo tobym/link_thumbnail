@@ -15,7 +15,9 @@ class LinkThumbnailTest < MiniTest::Unit::TestCase
 
     :oembed_xml => File.join(File.dirname(__FILE__), "fixtures", "oembed_xml.html"),
     :oembed_xml_thumbnail_response => File.join(File.dirname(__FILE__), "fixtures", "oembed_thumbnail_response.xml"),
-    :oembed_xml_photo_response => File.join(File.dirname(__FILE__), "fixtures", "oembed_photo_response.xml")
+    :oembed_xml_photo_response => File.join(File.dirname(__FILE__), "fixtures", "oembed_photo_response.xml"),
+
+    :microformat => File.join(File.dirname(__FILE__), "fixtures", "microformat.html")
   }
 
   def test_opengraph
@@ -55,6 +57,10 @@ class LinkThumbnailTest < MiniTest::Unit::TestCase
 
     assert_equal "http://farm4.static.flickr.com/3123/2341623661_7c99f48bbf_m.jpg",
       LinkThumbnail.thumbnail_url(FIXTURES[:oembed_xml])
+  end
+
+  def test_microformat
+    assert_equal "http://example.com/thumb.jpg", LinkThumbnail.thumbnail_url(FIXTURES[:microformat])
   end
 
 end

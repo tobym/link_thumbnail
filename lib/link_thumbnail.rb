@@ -34,6 +34,9 @@ module LinkThumbnail
           # Photo type
           return response.xpath('/oembed/url').first.content
         end
+      elsif element = doc.xpath('//img[@class="photo" and @src]').first
+          # Microformat
+          return element.attributes['src'].value
       end
     end
 
