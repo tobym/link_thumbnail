@@ -19,8 +19,8 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  s.add_dependency(%q<json>, ["~> 1.4.0"])
-  s.add_dependency(%q<nokogiri>, ["~> 1.4.0"])
+  s.add_dependency(%q<json>, ["~> 1.7.0"])
+  s.add_dependency(%q<nokogiri>, ["~> 1.5.0"])
   s.add_dependency(%q<ruby-readability>, ["~> 0.2.3"])
   s.add_development_dependency(%q<mocha>, [">= 0"])
 
